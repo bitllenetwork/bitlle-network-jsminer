@@ -1,0 +1,27 @@
+{
+  "name": "bgsminer",
+  "version": "0.1.0",
+  "description": "Simple examle for space reservation into BtitlleGasStation1 smart contract",
+  "main": "BGSMiner.js",
+  "dependencies": {
+    "bitllejs": "^1.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitllenetwork/bitlle-network-jsminer.git"
+  },
+  "keywords": [
+    "Bitlle",
+    "Network",
+    "BitlleGasStation1",
+    "ethereum",
+    "gas",
+    "mining"
+  ],
+  "author": "Alexey Saliuk",
+  "license": "MIT"
+}
