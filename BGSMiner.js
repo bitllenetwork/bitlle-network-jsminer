@@ -77,5 +77,10 @@ function GetBounty(_tankID, callBack) {
         }
     });
 }
+                    
 
-GetGasTank();                                  
+module.exports = {
+    GetGasTank: GetGasTank,
+    Mine: Mine,
+    GetBounty: GetBounty
+}
