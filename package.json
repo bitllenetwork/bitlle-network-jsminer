@@ -1,6 +1,6 @@
 {
   "name": "bgsminer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple examle for space reservation into BitlleGasStation1 smart contract",
   "main": "BGSMiner.js",
   "dependencies": {

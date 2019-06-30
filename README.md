@@ -26,8 +26,17 @@ Replace the data in the [config.js](./config.js) with your own.
 
 ## Usage
 
+Can be used as node module
+
+```JS
+var bgsminer = require('bgsminer');
+bgsminer.GetGasTank();
+```
+
+or can be run directly
+
 ```bash
-node start
+node node_modules\bgsminer\start
 ```
 
 ## Descriptions
