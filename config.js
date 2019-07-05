@@ -1,8 +1,8 @@
 module.exports = {
-    address: '0x................................................................',
-    privateKey:'0x................................................................' ,
+    address: '0x.......................................',
+    privateKey:'0x.......................................................' ,
     valueToMine: 1,
     cashOutVal: 500,
-    RPC : 'https://ropsten.infura.io/'     
-
+    RPC : 'https://ropsten.infura.io/',
+    tankToMine: null
 }

@@ -13,15 +13,16 @@ var tankToMine;
 var txSent;
 
 if (bitllejs.config.GasStation.GS1.version != '0.3.0') throw new Error('iGasStation ERROR: unknown GS1 contract version');
-console.log('GasStation1 address:',GS1.address);
-console.log('Miner address:',config.address);
+console.log('GasStation1 address:', GS1.address);
+console.log('Miner address:', config.address);
 
 
 function GetGasTank() {
     setTimeout(() => {
+
         var myTanks = GS1.tanksOfOwner(config.address);
         console.log('Miner tanks', myTanks.toString());
-        if (!myTanks.length) {
+        if (config.tankToMine == null && !myTanks.length) {
             if (txSent) {
                 console.log('Mine() wating register gasTank tx...');
                 GetGasTank();
@@ -31,7 +32,7 @@ function GetGasTank() {
                 GetGasTank();
             }
         } else {
-            tankToMine = myTanks[0].toNumber();
+            tankToMine = (config.tankToMine == null) ? myTanks[0].toNumber() : config.tankToMine;
             console.log('will mine to tankID: ' + tankToMine);
             Mine();
         }
@@ -45,14 +46,13 @@ function Mine() {
             if (e) {
                 console.log('Mine() get epoch ERROR:', e);
                 Mine();
-            } else {               
+            } else {
                 if (lastEpoch < r) {
                     console.log('new epoch:', r.toNumber());
                     lastEpoch = r;
                     GetBounty(tankToMine, (e, r) => {
                         GS1.mine(tankToMine, config.valToMine, config.privateKey);
                     });
-
                 }
                 //console.log('cur epoch', r.toNumber());
                 Mine();
@@ -77,7 +77,7 @@ function GetBounty(_tankID, callBack) {
         }
     });
 }
-                    
+
 
 module.exports = {
     GetGasTank: GetGasTank,
