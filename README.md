@@ -37,7 +37,7 @@ bgsminer.GetGasTank();
 or can be run directly
 
 ```bash
-node node_modules\bgsminer\start
+node node_modules/bgsminer/start.js
 ```
 
 ## Descriptions
