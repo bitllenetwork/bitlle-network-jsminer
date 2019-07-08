@@ -51,7 +51,8 @@ function Mine() {
                     console.log('new epoch:', r.toNumber());
                     lastEpoch = r;
                     GetBounty(tankToMine, (e, r) => {
-                        GS1.mine(tankToMine, config.valToMine, config.privateKey);
+                        console.log('mine', config.valueToMine, 'slots to tank ID:', tankToMine)
+                        GS1.mine(tankToMine, config.valueToMine, config.privateKey);
                     });
                 }
                 //console.log('cur epoch', r.toNumber());
