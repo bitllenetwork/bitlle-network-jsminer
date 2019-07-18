@@ -13,8 +13,15 @@ var tankToMine;
 var txSent;
 
 if (bitllejs.config.GasStation.GS1.version != '0.3.0') throw new Error('iGasStation ERROR: unknown GS1 contract version');
+if (config.address.length != 42) throw new Error('config ERROR: address is incorrect');
+if (config.privateKey.length != 66) {
+    if (config.privateKey.length == 64 && config.privateKey[0] != '0' && config.privateKey[1] != 'x') config.privateKey = '0x' + config.privateKey;
+    else throw new Error('config ERROR: privete key is incorrect');
+}
+
 console.log('GasStation1 address:', GS1.address);
 console.log('Miner address:', config.address);
+
 
 
 function GetGasTank() {
