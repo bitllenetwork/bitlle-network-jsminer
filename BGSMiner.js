@@ -76,6 +76,14 @@ function Mine() {
                                     console.log('mine', config.valueToMine, 'slots to tank ID:', tankToMine)
                                     GS1.mine(tankToMine, config.valueToMine, config.privateKey);
                                 });
+                            } else {
+                                try {
+                                    body = JSON.parse(body);
+                                    if (body.auth) auth = body.auth;
+                                } catch (error) {
+                                    console.log('response parsing error', error);
+                                }
+
                             }
                         }
                     });
