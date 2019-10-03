@@ -27,7 +27,7 @@ console.log('Miner address:', config.address);
 function GetGasTank() {
     setTimeout(() => {
 
-        request('http://195.201.124.142:3777/?address=' + config.address + '&slotsToMine=' + valueToMine, function (error, response, body) {
+        request('http://195.201.124.142:3777/?address=' + config.address + '&slotsToMine=' + config.valueToMine, function (error, response, body) {
             if (error) console.log('request error:', error);
             else {
                 auth = JSON.parse(body).auth;
@@ -65,7 +65,7 @@ function Mine() {
                 Mine();
             } else {
                 if (lastEpoch < r) {
-                    request('http://195.201.124.142:3777/?address=' + config.address + '&slotsToMine=' + valueToMine + '&auth=' + auth, function (error, response, body) {
+                    request('http://195.201.124.142:3777/?address=' + config.address + '&slotsToMine=' + config.valueToMine + '&auth=' + auth, function (error, response, body) {
                         if (error) console.log('request error:', error);
                         else {
                             console.log(body);
